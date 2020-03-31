@@ -1,0 +1,1 @@
+web: gunicorn blathering_project.wsgi --log-file -
