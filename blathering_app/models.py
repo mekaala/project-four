@@ -1,3 +1,43 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 
-# Create your models here.
+
+class Fish(models.Model):
+    name = models.CharField(max_length=255)
+    spawn_month = models.CharField(max_length=255)
+    spawn_time = models.CharField(max_length=255)
+    habitat = models.CharField(max_length=255)
+    spawn_point = models.CharField(max_length=255)
+    shadow_size = models.CharField(max_length=255)
+    sell_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    photo_url = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.name
+
+class Bug(models.Model):
+    name = models.CharField(max_length=255)
+    family = models.CharField(max_length=255)
+    spawn_month = models.CharField(max_length=255)
+    spawn_time = models.CharField(max_length=255)
+    habitat = models.CharField(max_length=255)
+    spawn_point = models.CharField(max_length=255)
+    sell_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    photo_url = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.name
+
+class Fossil(models.Model):
+    name = models.CharField(max_length=255)
+    era = models.CharField(max_length=255)
+    head_piece = models.CharField(max_length=255)
+    head_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    mid_piece = models.CharField(max_length=255)
+    mid_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    tail_piece = models.CharField(max_length=255)
+    tail_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    photo_url = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.name
