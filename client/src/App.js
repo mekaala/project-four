@@ -16,9 +16,7 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    <div>
-                        <h1>Blathering</h1>
-                    </div>
+                    <Link to="/"><h1>Blathering</h1></Link>
                     <NavBar/>
                     <Switch>
                       <Route exact path="/" component={ Home }/>
