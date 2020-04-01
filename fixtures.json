@@ -1,0 +1,160 @@
+[
+    {
+        "model": "blathering_app.Fish",
+        "pk": 1,
+        "fields": {
+            "name": "Bitterling",
+            "spawn_month_north": "November to March",
+            "spawn_month_south": "May to October",
+            "spawn_time": "Any Time",
+            "habitat": "River",
+            "shadow_size": "Tiny",
+            "sell_price": 900,
+            "photo_url": "https://vignette.wikia.nocookie.net/animalcrossing/images/4/4b/Sea_bass_encyclopedia_%28New_Leaf%29.jpg/revision/latest?cb=20151013020400"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 2,
+        "fields": {
+            "name": "Pale Chub",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "9 AM to 4 PM",
+            "habitat": "River",
+            "shadow_size": "Tiny",
+            "sell_price": 200,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16932.png"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 3,
+        "fields": {
+            "name": "Crucian Carp",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "Any Time",
+            "habitat": "River",
+            "shadow_size": "Small",
+            "sell_price": 160,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16930.png"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 4,
+        "fields": {
+            "name": "Dace",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "4 PM to 9 AM",
+            "habitat": "River",
+            "shadow_size": "Medium",
+            "sell_price": 240,
+            "photo_url": "https://progameguides.com/wp-content/uploads/2020/03/featured-animal-crossing-how-to-catch-tuna.jpg"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 5,
+        "fields": {
+            "name": "Carp",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "Any Time",
+            "habitat": "Pond",
+            "shadow_size": "Large",
+            "sell_price": 300,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/17093.png"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 6,
+        "fields": {
+            "name": "Koi",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "4 PM to 9 AM",
+            "habitat": "Pond",
+            "shadow_size": "Large",
+            "sell_price": 4000,
+            "photo_url": "https://gamewith-en.akamaized.net/article_tools/animal-crossing-new-horizons/gacha/sakana_47.png"
+        }
+    },
+    {
+        "model": "blathering_app.Fish",
+        "pk": 7,
+        "fields": {
+            "name": "Goldfish",
+            "spawn_month_north": "All Year",
+            "spawn_month_south": "All Year",
+            "spawn_time": "Any Time",
+            "habitat": "Pond",
+            "shadow_size": "Tiny",
+            "sell_price": 1300,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+        }
+    },
+    {
+        "model": "blathering_app.Bug",
+        "pk": 1,
+        "fields": {
+            "name": "Common Butterfly",
+            "spawn_month_north": "September to June",
+            "spawn_month_south": "March to December",
+            "spawn_time": "4 AM to 7 PM",
+            "location": "Flowers",
+            "movement": "Flight",
+            "dangerous": "No",
+            "sell_price": 160,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+        }
+    },
+    {
+        "model": "blathering_app.Bug",
+        "pk": 2,
+        "fields": {
+            "name": "Yellow Butterfly",
+            "spawn_month_north": "March to June, September to October",
+            "spawn_month_south": "September to December, March to April",
+            "spawn_time": "4 AM to 7 PM",
+            "location": "Flowers",
+            "movement": "Flight",
+            "dangerous": "No",
+            "sell_price": 160,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+        }
+    },
+    {
+        "model": "blathering_app.Bug",
+        "pk": 3,
+        "fields": {
+            "name": "Tiger Butterfly",
+            "spawn_month_north": "March to September",
+            "spawn_month_south": "September to March",
+            "spawn_time": "4 AM to 7 PM",
+            "location": "Flowers",
+            "movement": "Flight",
+            "dangerous": "No",
+            "sell_price": 160,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+        }
+    },
+    {
+        "model": "blathering_app.Bug",
+        "pk": 4,
+        "fields": {
+            "name": "Peacock Butterfly",
+            "spawn_month_north": "March to June",
+            "spawn_month_south": "September to December",
+            "spawn_time": "4 AM to 7 PM",
+            "location": "Flowers (Dark Color)",
+            "movement": "Flight",
+            "dangerous": "No",
+            "sell_price": 2500,
+            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+        }
+    }
+]
