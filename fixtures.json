@@ -7,7 +7,7 @@
             "spawn_month_north": "November to March",
             "spawn_month_south": "May to October",
             "spawn_time": "Any Time",
-            "habitat": "River",
+            "location": "River",
             "shadow_size": "Tiny",
             "sell_price": 900,
             "photo_url": "https://vignette.wikia.nocookie.net/animalcrossing/images/4/4b/Sea_bass_encyclopedia_%28New_Leaf%29.jpg/revision/latest?cb=20151013020400"
@@ -21,7 +21,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "9 AM to 4 PM",
-            "habitat": "River",
+            "location": "River",
             "shadow_size": "Tiny",
             "sell_price": 200,
             "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16932.png"
@@ -35,7 +35,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "Any Time",
-            "habitat": "River",
+            "location": "River",
             "shadow_size": "Small",
             "sell_price": 160,
             "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16930.png"
@@ -49,7 +49,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "4 PM to 9 AM",
-            "habitat": "River",
+            "location": "River",
             "shadow_size": "Medium",
             "sell_price": 240,
             "photo_url": "https://progameguides.com/wp-content/uploads/2020/03/featured-animal-crossing-how-to-catch-tuna.jpg"
@@ -63,7 +63,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "Any Time",
-            "habitat": "Pond",
+            "location": "Pond",
             "shadow_size": "Large",
             "sell_price": 300,
             "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/17093.png"
@@ -77,7 +77,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "4 PM to 9 AM",
-            "habitat": "Pond",
+            "location": "Pond",
             "shadow_size": "Large",
             "sell_price": 4000,
             "photo_url": "https://gamewith-en.akamaized.net/article_tools/animal-crossing-new-horizons/gacha/sakana_47.png"
@@ -91,7 +91,7 @@
             "spawn_month_north": "All Year",
             "spawn_month_south": "All Year",
             "spawn_time": "Any Time",
-            "habitat": "Pond",
+            "location": "Pond",
             "shadow_size": "Tiny",
             "sell_price": 1300,
             "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
