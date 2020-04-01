@@ -7,7 +7,7 @@ class Fish(models.Model):
     spawn_month_north = models.CharField(max_length=255)
     spawn_month_south = models.CharField(max_length=255)
     spawn_time = models.CharField(max_length=255)
-    habitat = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
     shadow_size = models.CharField(max_length=255)
     sell_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
     photo_url = models.CharField(max_length=400)
