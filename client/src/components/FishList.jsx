@@ -32,7 +32,7 @@ class FishList extends Component {
                 <h1>Fish Encyclopedia</h1>
                 {this.state.fishes.map(fish => (
                     <div key={fish.id}>
-                        <Link to={`/fish/${fish.id}`} >{fish.name}</Link>
+                        <Link to={`/fish/${fish.id}`}>{fish.name}</Link>
                     </div>
                 ))}
             </div>

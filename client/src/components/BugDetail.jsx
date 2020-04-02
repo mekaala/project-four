@@ -29,6 +29,19 @@ class BugDetail extends Component {
             <div>
                 <img src={ this.state.bug.photo_url } alt=""/>
                 <h1>{ this.state.bug.name }</h1>
+                <h2>{ this.state.bug.family } Family</h2>
+                <h3>Months</h3>
+                <h4>Northern Hemisphere: { this.state.bug.spawn_month_north }</h4>
+                <h4>Southern Hemisphere: { this.state.bug.spawn_month_south }</h4>
+                <h3>Time</h3>
+                <h4>{ this.state.bug.spawn_time }</h4>
+                <h3>Location</h3>
+                <h4>{ this.state.bug.location }</h4>
+                <h3>Movement</h3>
+                <h4>{ this.state.bug.movement }</h4>
+                <h3>Dangerous: { this.state.bug.dangerous }</h3>
+                <h3>Sell Price</h3>
+                <h4>{ this.state.bug.sell_price } Bells</h4>
             </div>
         );
     }

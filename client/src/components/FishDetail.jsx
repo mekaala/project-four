@@ -27,8 +27,19 @@ class FishDetail extends Component {
     render() {
         return (
             <div>
-                <img src={ this.state.fish.photo_url } alt=""/>
+                <img src={ this.state.fish.photo_url } alt={ this.state.fish.name }/>
                 <h1>{ this.state.fish.name }</h1>
+                <h3>Months</h3>
+                <h4>Northern Hemisphere: { this.state.fish.spawn_month_north }</h4>
+                <h4>Southern Hemisphere: { this.state.fish.spawn_month_south }</h4>
+                <h3>Time</h3>
+                <h4>{ this.state.fish.spawn_time }</h4>
+                <h3>Location</h3>
+                <h4>{ this.state.fish.location }</h4>
+                <h3>Shadow Size</h3>
+                <h4>{ this.state.fish.shadow_size }</h4>
+                <h3>Sell Price</h3>
+                <h4>{ this.state.fish.sell_price }</h4>
             </div>
         );
     }
