@@ -8,6 +8,7 @@ import BugList from './components/BugList';
 import BugDetail from './components/BugDetail';
 import FossilList from './components/FossilList';
 import FossilDetail from './components/FossilDetail';
+import Footer from './components/Footer'
 
 import "./App.css";
 
@@ -19,14 +20,15 @@ class App extends Component {
                     <Link to="/"><h1>Blathering</h1></Link>
                     <NavBar/>
                     <Switch>
-                      <Route exact path="/" component={ Home }/>
-                      <Route exact path="/fish" component={ FishList }/>
-                      <Route path="/fish/:id" component={ FishDetail }/>
-                      <Route exact path="/bugs" component={ BugList }/>
-                      <Route path="/bugs/:id" component={ BugDetail }/>
-                      <Route exact path="/fossils" component={ FossilList }/>
-                      <Route path="/fossils/:id" component={ FossilDetail }/>
+                        <Route exact path="/" component={ Home }/>
+                        <Route exact path="/fish" component={ FishList }/>
+                        <Route path="/fish/:id" component={ FishDetail }/>
+                        <Route exact path="/bugs" component={ BugList }/>
+                        <Route path="/bugs/:id" component={ BugDetail }/>
+                        <Route exact path="/fossils" component={ FossilList }/>
+                        <Route path="/fossils/:id" component={ FossilDetail }/>
                     </Switch>
+                    <Footer/>
                 </div>
             </Router>
         );
