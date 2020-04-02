@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = '/var/murmuring-peak-82376/static/'
+# STATIC_ROOT = '/var/mekaala-blathering-app/static/'
 
 
 # Configure Django App for Heroku.
