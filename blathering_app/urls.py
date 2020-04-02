@@ -6,6 +6,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('fish', views.FishView)
 router.register('bugs', views.BugView)
+router.register('fossils', views.FossilView)
 
 
 urlpatterns = [
