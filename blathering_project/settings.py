@@ -14,13 +14,11 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Add these two lines.
 REACT_APP_DIR = os.path.join(BASE_DIR, 'client')
 
-# STATICFILES_DIRS = [
-#     os.path.join(REACT_APP_DIR, 'build', 'static')
-# ]
-
+STATICFILES_DIRS = [
+    os.path.join(REACT_APP_DIR, 'build', 'static'),
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -125,11 +123,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-import django_heroku
-django_heroku.settings(locals())
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = '/var/murmuring-peak-82376/static/'
+
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
