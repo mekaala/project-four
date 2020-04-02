@@ -102,6 +102,7 @@
         "pk": 1,
         "fields": {
             "name": "Common Butterfly",
+            "family": "Butterfly",
             "spawn_month_north": "September to June",
             "spawn_month_south": "March to December",
             "spawn_time": "4 AM to 7 PM",
@@ -109,7 +110,7 @@
             "movement": "Flight",
             "dangerous": "No",
             "sell_price": 160,
-            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+            "photo_url": "https://i.imgur.com/6057ndp.jpg"
         }
     },
     {
@@ -117,6 +118,7 @@
         "pk": 2,
         "fields": {
             "name": "Yellow Butterfly",
+            "family": "Butterfly",
             "spawn_month_north": "March to June, September to October",
             "spawn_month_south": "September to December, March to April",
             "spawn_time": "4 AM to 7 PM",
@@ -124,7 +126,7 @@
             "movement": "Flight",
             "dangerous": "No",
             "sell_price": 160,
-            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+            "photo_url": "https://i.imgur.com/3NOTgeC.jpg"
         }
     },
     {
@@ -132,6 +134,7 @@
         "pk": 3,
         "fields": {
             "name": "Tiger Butterfly",
+            "family": "Butterfly",
             "spawn_month_north": "March to September",
             "spawn_month_south": "September to March",
             "spawn_time": "4 AM to 7 PM",
@@ -139,7 +142,7 @@
             "movement": "Flight",
             "dangerous": "No",
             "sell_price": 160,
-            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+            "photo_url": "https://i.imgur.com/rQunhuw.jpg"
         }
     },
     {
@@ -147,6 +150,7 @@
         "pk": 4,
         "fields": {
             "name": "Peacock Butterfly",
+            "family": "Butterfly",
             "spawn_month_north": "March to June",
             "spawn_month_south": "September to December",
             "spawn_time": "4 AM to 7 PM",
@@ -154,7 +158,7 @@
             "movement": "Flight",
             "dangerous": "No",
             "sell_price": 2500,
-            "photo_url": "https://gamewith-en.akamaized.net/article/thumbnail/rectangle/16929.png"
+            "photo_url": "https://i.imgur.com/5FgkLVO.jpg"
         }
     }
 ]
