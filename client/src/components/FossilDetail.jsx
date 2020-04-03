@@ -27,7 +27,7 @@ class FossilDetail extends Component {
     render() {
         return (
             <div>
-                <img src={ this.state.fossil.photo_url } alt=""/>
+                <img src={ this.state.fossil.photo_url } alt={ this.state.fossil.name }/>
                 <h1>{ this.state.fossil.name }</h1>
                 <h3>{ this.state.fossil.head_piece } - { this.state.fossil.head_price } Bells</h3>
                 <h3>{ this.state.fossil.mid_piece } - { this.state.fossil.mid_price } Bells</h3>

@@ -27,7 +27,7 @@ class BugDetail extends Component {
     render() {
         return (
             <div>
-                <img src={ this.state.bug.photo_url } alt=""/>
+                <img src={ this.state.bug.photo_url } alt={ this.state.bug.name }/>
                 <h1>{ this.state.bug.name }</h1>
                 <h2>{ this.state.bug.family } Family</h2>
                 <h3>Months</h3>
