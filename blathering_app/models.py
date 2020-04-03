@@ -32,7 +32,6 @@ class Bug(models.Model):
 
 class Fossil(models.Model):
     name = models.CharField(max_length=255)
-    era = models.CharField(max_length=255)
     head_piece = models.CharField(max_length=255)
     head_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
     mid_piece = models.CharField(max_length=255, blank=True)
