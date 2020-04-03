@@ -83,8 +83,8 @@ WSGI_APPLICATION = 'blathering_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blathering',
-        'USER': 'blatheringuser',
+        'NAME': 'blathering_database',
+        'USER': 'blathering_user',
         'PASSWORD': 'blathering',
         'HOST': 'localhost'
     }
