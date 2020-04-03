@@ -16,4 +16,4 @@ class BugSerializer(serializers.ModelSerializer):
 class FossilSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fossil
-        fields = ('id', 'name', 'era', 'head_piece', 'head_price', 'mid_piece', 'mid_price', 'tail_piece', 'tail_price', 'photo_url')
+        fields = ('id', 'name', 'head_piece', 'head_price', 'mid_piece', 'mid_price', 'tail_piece', 'tail_price', 'photo_url')

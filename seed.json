@@ -72,6 +72,14 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "08nhwtqiuvhv6570w3py9e0kgkvyyqo4",
+    "fields": {
+        "session_data": "MjA2MDZjYmFhZTFlNTAxNDBmYWJjNGNlOGQ4YjlkNjc5Y2E2YzE3Zjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0NmU1MjFkOGYyZjAxNTM3YjYxODhlMjNiMDE2MGFlZGNhN2UwYTQ1In0=",
+        "expire_date": "2020-04-16T21:04:57.660Z"
+    }
+},
+{
     "model": "blathering_app.fish",
     "pk": 1,
     "fields": {
@@ -231,6 +239,54 @@
         "dangerous": "No",
         "sell_price": 2500,
         "photo_url": "https://i.imgur.com/5FgkLVO.jpg"
+    }
+},
+{
+    "model": "blathering_app.bug",
+    "pk": 5,
+    "fields": {
+        "name": "Common Bluebottle",
+        "family": "Butterfly",
+        "spawn_month_north": "April to August",
+        "spawn_month_south": "October to February",
+        "spawn_time": "4 AM to 7 PM",
+        "location": "Flowers",
+        "movement": "Flight",
+        "dangerous": "No",
+        "sell_price": 300,
+        "photo_url": "https://i.imgur.com/Yk0s0rE.jpg"
+    }
+},
+{
+    "model": "blathering_app.bug",
+    "pk": 6,
+    "fields": {
+        "name": "Paper Kite Butterfly",
+        "family": "Butterfly",
+        "spawn_month_north": "All Year",
+        "spawn_month_south": "All Year",
+        "spawn_time": "8 AM to 7 PM",
+        "location": "Flowers",
+        "movement": "Flight",
+        "dangerous": "No",
+        "sell_price": 1000,
+        "photo_url": "https://i.imgur.com/pBxNuk4.jpg"
+    }
+},
+{
+    "model": "blathering_app.bug",
+    "pk": 7,
+    "fields": {
+        "name": "Emperor Butterfly",
+        "family": "Butterfly",
+        "spawn_month_north": "June to September, December to March",
+        "spawn_month_south": "June to September, December to March",
+        "spawn_time": "7 PM to 8 AM",
+        "location": "Flowers",
+        "movement": "Flight",
+        "dangerous": "No",
+        "sell_price": 4000,
+        "photo_url": "https://i.imgur.com/VFhSDnv.jpg"
     }
 },
 {
@@ -555,6 +611,63 @@
         "name": "Can view fossil",
         "content_type": 9,
         "codename": "view_fossil"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$CvWiZ2cIiPk1$ag3yyhCDkUXWNBaw3kRQzhCZEuRtqbcEmsMzZikqKnA=",
+        "last_login": "2020-04-02T21:04:57.657Z",
+        "is_superuser": true,
+        "username": "mekaalahmad",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-04-01T13:06:35.264Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-04-02T16:06:56.529Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Common Bluebottle",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-04-02T16:09:22.394Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Paper Kite Butterfly",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-04-02T16:13:47.850Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Emperor Butterfly",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 }
 ]
