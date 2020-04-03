@@ -34,10 +34,10 @@ class Fossil(models.Model):
     name = models.CharField(max_length=255)
     head_piece = models.CharField(max_length=255)
     head_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
-    mid_piece = models.CharField(max_length=255, blank=True)
-    mid_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True)
-    tail_piece = models.CharField(max_length=255, blank=True)
-    tail_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True)
+    mid_piece = models.CharField(max_length=255, blank=True, null=True)
+    mid_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True, null=True)
+    tail_piece = models.CharField(max_length=255, blank=True, null=True)
+    tail_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True, null=True)
     photo_url = models.CharField(max_length=400)
 
     def __str__(self):
