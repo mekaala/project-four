@@ -35,10 +35,10 @@ class Fossil(models.Model):
     era = models.CharField(max_length=255)
     head_piece = models.CharField(max_length=255)
     head_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
-    mid_piece = models.CharField(max_length=255)
-    mid_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
-    tail_piece = models.CharField(max_length=255)
-    tail_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    mid_piece = models.CharField(max_length=255, blank=True)
+    mid_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True)
+    tail_piece = models.CharField(max_length=255, blank=True)
+    tail_price = models.PositiveIntegerField(validators=[MaxValueValidator(999999)], blank=True)
     photo_url = models.CharField(max_length=400)
 
     def __str__(self):
