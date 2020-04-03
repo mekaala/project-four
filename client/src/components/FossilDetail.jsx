@@ -29,6 +29,10 @@ class FossilDetail extends Component {
             <div>
                 <img src={ this.state.fossil.photo_url } alt=""/>
                 <h1>{ this.state.fossil.name }</h1>
+                <h3>{ this.state.fossil.era }</h3>
+                <h3>{ this.state.fossil.head_piece } - { this.state.fossil.head_price }</h3>
+                <h3>{ this.state.fossil.mid_piece } - { this.state.fossil.mid_price }</h3>
+                <h3>{ this.state.fossil.tail_piece } - { this.state.fossil.tail_price }</h3>
             </div>
         );
     }
