@@ -33,5 +33,5 @@ Detailed Fossil Page
 <img src="wireframes/FossilDetail.png" alt="Detailed Fossil Page"/>
 
 ### Links
-<a href="https://mekaala-blathering-app.herokuapp.com/">Blathering</a>
+<a href="https://mekaala-blathering-app.herokuapp.com/">Blathering</a><br/>
 <a href="https://trello.com/c/ZWIse9hc/1-checklist">Trello Board</a>
