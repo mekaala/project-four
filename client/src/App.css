@@ -1,38 +1,196 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
 .App {
   text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Nunito', sans-serif;
+  background-image: url(./images/EU8InuhUYAUIV-P.jpeg);
+  backdrop-filter: blur(5px);
+  color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h2, h3, h4 {
+  font-weight: lighter;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  padding: 3% 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.title h1 {
+  display: inline;
+  margin-right: 1%;
+}
+.owl {
+  width: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover, .navbar a:hover {
+  color: rgb(56, 143, 243);
+  transition-duration: 0.5s;
+}
+
+
+/* NAVIGATION */
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  font-size: 1.3em;
+  background: rgb(15,12,1);
+  box-shadow: -4px 1px 5px #000;
+}
+.navbar a{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* PAGES */
+.home, .fish, .bugs, .fossils, .single-creature, .footer {
+  margin: 5% 0%;
+  border-radius: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 10% 0;
+}
+
+.home img {
+  width: 150px;
+}
+
+.fish img, .bugs img, .fossils img {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+}
+
+.creature-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.creature-index {
+  margin: auto;
+}
+
+.creature-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10% 1%;
+}
+
+.creature-description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  width: 60%;
+}
+
+.fossil-description {
+  margin: 0 20%;
+}
+
+.months {
+  grid-column: span 2;
+}
+
+.creature-image img {
+  max-width: 300px;
+  border-radius: 12px;
+}
+
+/* ABOUT */
+
+.blathering-container {
+  margin: 0 1%;
+}
+.about h1 {
+  color: black;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.about-container {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4% auto;
+}
+.about-container img {
+  width: 40%;
+  max-width: 350px;
+}
+.about-description {
+  width: 60%;
+  margin: 5%;
+
+}
+.about-description h2 {
+  width: 100%;
+}
+.about p {
+  width: 100%;
+  font-size: 1.15rem;
+  line-height: 25px;
+  overflow: hidden;
+}
+
+.reference {
+  font-size: smaller;
+}
+
+/* FOOTER */
+.footer {
+  font-size: 1.3em;
+}
+.footer button {
+  font-family: 'Nunito', sans-serif;
+  font-size: large;
+  border-radius: 8px;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 760px) {
+  .home-container, .creature-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    margin: 10% 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .creature-container {
+    display: block;
+    margin: 10% 1%;
+  }
+  
+ .creature-description {
+    width: auto;
+    margin: 1% 0;
+  }
+  .about-container {
+    display: block;
+  }
+  .about-description {
+    width: auto;
+  }
+  .footer {
+    font-size: 80%;
   }
 }

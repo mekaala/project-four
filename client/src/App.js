@@ -9,6 +9,8 @@ import BugDetail from './components/BugDetail';
 import FossilList from './components/FossilList';
 import FossilDetail from './components/FossilDetail';
 import Footer from './components/Footer'
+import owl from './images/owl.png'
+
 
 import "./App.css";
 
@@ -17,7 +19,11 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    <Link to="/"><h1>Blathering</h1></Link>
+                    <div className="background"></div>
+                    <div className="title">
+                        <Link to="/"><h1>Blathering</h1></Link>
+                        <Link to="/"><img className="owl" src={ owl } alt="owl"/></Link>
+                    </div>
                     <NavBar/>
                     <Switch>
                         <Route exact path="/" component={ Home }/>
