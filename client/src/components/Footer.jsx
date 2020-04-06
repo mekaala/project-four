@@ -36,7 +36,7 @@ export default class About extends Component {
                     <div className="about">
                     <h1>ABOUT BLATHERING</h1>
                         <div className="blathering-container">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, eius eveniet error rerum iure adipisci quisquam ab quae quo corrupti recusandae illo modi! Aut est voluptates voluptatem in eligendi debitis?</p>
+                            <p>Blathering is a supplemental database for player of Animal Crossing New Horizons, featuring obtainable fish, bugs, and fossils within the game. Players can learn where to find various species, and how much they can sell them for in order to progress through the game.</p>
                             <div className="reference">Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                         </div>
                     </div>
