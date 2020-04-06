@@ -35,12 +35,15 @@ export default class About extends Component {
                     ?
                     <div className="about">
                     <h1>ABOUT BLATHERING</h1>
-                        <div className="mindify-container">
+                        <div className="blathering-container">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, eius eveniet error rerum iure adipisci quisquam ab quae quo corrupti recusandae illo modi! Aut est voluptates voluptatem in eligendi debitis?</p>
+                            <div className="reference">Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                         </div>
                     </div>
                     : null
-                }<br/>
+                }
+                <br/>
+                <br/>
                 <button onClick={ this.toggleAbout }>
                     { this.state.showAbout
                         ? 'Collapse'

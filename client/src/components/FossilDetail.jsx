@@ -24,41 +24,77 @@ class FossilDetail extends Component {
         }
     }
 
-    hideMiddle() {
-        const middle = document.getElementsByClassName("middle");
-        if (this.state.fossil.mid_piece != null) {
-            return middle;
-        } else if (this.state.fossil.mid_piece = null) {
-            return middle.style.display ='none';
+    hideSecond() {
+        const second = document.getElementsByClassName("second");
+        if (this.state.fossil.piece_two != null) {
+            return second;
+        } else if (this.state.fossil.piece_two = null) {
+            return second.style.display ='none';
         }
     }
 
-    hideTail() {
-        const tail = document.getElementsByClassName("tail");
-        if (this.state.fossil.tail_piece != null) {
-            return tail;
-        } else if (this.state.fossil.tail_piece = null) {
-            return tail.style.display ='none';
+    hideThird() {
+        const third = document.getElementsByClassName("third");
+        if (this.state.fossil.piece_three != null) {
+            return third;
+        } else if (this.state.fossil.piece_three = null) {
+            return third.style.display ='none';
+        }
+    }
+
+    hideFourth() {
+        const fourth = document.getElementsByClassName("fourth");
+        if (this.state.fossil.piece_four != null) {
+            return fourth;
+        } else if (this.state.fossil.piece_four = null) {
+            return fourth.style.display ='none';
+        }
+    }
+
+    hideFifth() {
+        const fifth = document.getElementsByClassName("fifth");
+        if (this.state.fossil.piece_five != null) {
+            return fifth;
+        } else if (this.state.fossil.piece_five = null) {
+            return fifth.style.display ='none';
         }
     }
 
     render() {
         return (
-            <div>
-                <img src={ this.state.fossil.photo_url } alt={ this.state.fossil.name }/>
+            <div className="single-creature">
                 <h1>{ this.state.fossil.name }</h1>
-                <h3>{ this.state.fossil.head_piece } - { this.state.fossil.head_price } Bells</h3>
-                <div className="middle">
-                    { this.hideMiddle()
-                        ? <h3>{ this.state.fossil.mid_piece } - { this.state.fossil.mid_price } Bells</h3>
-                        : null
-                    }
-                </div>
-                <div className="tail">
-                    { this.hideTail()
-                        ? <h3>{ this.state.fossil.tail_piece } - { this.state.fossil.tail_price } Bells</h3>
-                        : null
-                    }
+                <div className="creature-container">
+                    <div className="fossil-description">
+                        <h3>{ this.state.fossil.piece_one } - { this.state.fossil.piece_one_price } Bells</h3>
+                        <div className="second">
+                            { this.hideSecond()
+                                ? <h3>{ this.state.fossil.piece_two } - { this.state.fossil.piece_two_price } Bells</h3>
+                                : null
+                            }
+                        </div>
+                        <div className="third">
+                            { this.hideThird()
+                                ? <h3>{ this.state.fossil.piece_three } - { this.state.fossil.piece_three_price } Bells</h3>
+                                : null
+                            }
+                        </div>
+                        <div className="fourth">
+                            { this.hideFourth()
+                                ? <h3>{ this.state.fossil.piece_four } - { this.state.fossil.piece_four_price } Bells</h3>
+                                : null
+                            }
+                        </div>
+                        <div className="fifth">
+                            { this.hideFifth()
+                                ? <h3>{ this.state.fossil.piece_five } - { this.state.fossil.piece_five_price } Bells</h3>
+                                : null
+                            }
+                        </div>
+                    </div>
+                    <div className="creature-image">
+                        <img src={ this.state.fossil.photo_url } alt={ this.state.fossil.name }/>
+                    </div>
                 </div>
             </div>
         );

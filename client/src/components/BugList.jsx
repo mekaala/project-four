@@ -28,13 +28,16 @@ class BugList extends Component {
             return <div>{this.state.error}</div>
         }
         return (
-            <div>
+            <div className="bugs">
                 <h1>Bug Encyclopedia</h1>
-                {this.state.bugs.map(bug => (
-                    <div key={bug.id}>
-                        <Link to={`/bugs/${bug.id}`} >{bug.name}</Link>
-                    </div>
-                ))}
+                <div className="creature-list">
+                    {this.state.bugs.map(bug => (
+                        <div className="creature-index" key={ bug.id }>
+                             <Link to={`/bugs/${ bug.id }`}><img src={ bug.photo_url } alt={ bug.name }/></Link>
+                            <Link to={`/bugs/${ bug.id }`} >{ bug.name }</Link>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

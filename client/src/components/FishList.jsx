@@ -28,13 +28,16 @@ class FishList extends Component {
             return <div>{this.state.error}</div>
         }
         return (
-            <div>
+            <div className="fish">
                 <h1>Fish Encyclopedia</h1>
-                {this.state.fishes.map(fish => (
-                    <div key={fish.id}>
-                        <Link to={`/fish/${fish.id}`}>{fish.name}</Link>
-                    </div>
-                ))}
+                <div className="creature-list">
+                    {this.state.fishes.map(fish => (
+                        <div className="creature-index" key={ fish.id }>
+                            <Link to={`/fish/${ fish.id }`}><img src={ fish.photo_url } alt={ fish.name }/></Link>
+                            <Link to={`/fish/${ fish.id }`}>{ fish.name }</Link>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

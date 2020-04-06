@@ -28,13 +28,16 @@ class FossilList extends Component {
             return <div>{this.state.error}</div>
         }
         return (
-            <div>
+            <div className="fossils">
                 <h1>Fossil Encyclopedia</h1>
-                {this.state.fossils.map(fossil => (
-                    <div key={fossil.id}>
-                        <Link to={`/fossils/${fossil.id}`} >{fossil.name}</Link>
-                    </div>
-                ))}
+                <div className="creature-list">
+                    {this.state.fossils.map(fossil => (
+                        <div className="creature-index" key={fossil.id}>
+                            <Link to={`/fossils/${ fossil.id }`}><img src={ fossil.photo_url } alt={ fossil.name }/></Link>
+                            <Link to={`/fossils/${ fossil.id }`} >{ fossil.name }</Link>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }
