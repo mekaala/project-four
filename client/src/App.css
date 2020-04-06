@@ -104,7 +104,10 @@ a:hover, .navbar a:hover {
 }
 
 .fossil-description {
-  margin: 0 20%;
+  background: rgba(242, 243, 176, 0.459);
+  border-radius: 12px;
+  margin: 0 2%;
+  padding: 0 10%;
 }
 
 .months {
@@ -191,6 +194,13 @@ a:hover, .navbar a:hover {
     width: auto;
     margin: 1% 0;
   }
+
+  .fossil-description {
+    padding: 0;
+    margin: 0 20%;
+
+  }
+
   .about-container {
     display: block;
   }
