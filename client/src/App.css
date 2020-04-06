@@ -98,6 +98,9 @@ a:hover, .navbar a:hover {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   width: 60%;
+  background: rgba(242, 243, 176, 0.459);
+  border-radius: 12px;
+  margin: 0 2%;
 }
 
 .fossil-description {
@@ -106,6 +109,10 @@ a:hover, .navbar a:hover {
 
 .months {
   grid-column: span 2;
+}
+
+.creature-image {
+  margin: auto;
 }
 
 .creature-image img {
