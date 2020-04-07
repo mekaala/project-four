@@ -23,7 +23,8 @@ class BugList extends Component {
             movement: '',
             sell_price: '',
             photo_url: ''
-        }
+        },
+        redirect: false
     }
 
     componentDidMount(){

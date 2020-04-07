@@ -20,7 +20,7 @@ class FossilList extends Component {
             piece_one_price: '',
             photo_url: ''
         },
-        redirect: true
+        redirect: false
     }
 
     componentDidMount(){
