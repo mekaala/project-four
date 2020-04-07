@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -17,7 +19,8 @@ class FossilList extends Component {
             piece_one: '',
             piece_one_price: '',
             photo_url: ''
-        }
+        },
+        redirect: true
     }
 
     componentDidMount(){
@@ -52,12 +55,11 @@ class FossilList extends Component {
     submitCreateForm = async (event) => {
         event.preventDefault();
         try {
-            const res = axios.post('/api/v1/fossils/?format=json', this.state.newFossil).then(() => {
-                this.fetchFossils();
-            })
+            const res = axios.post('/api/v1/fossils/?format=json', this.state.newFossil)
             this.setState({
                 fossils: res.data,
                 showCreateForm: false,
+                redirect: true
             });
         }
         catch (err) {
@@ -69,6 +71,9 @@ class FossilList extends Component {
     render() {
         if (this.state.error){
             return <div>{this.state.error}</div>
+        }
+        if (this.state.redirect) {
+            return <Redirect to="/fossils"/>;
         }
         return (
             <div className="fossils">

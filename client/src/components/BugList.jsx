@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -55,12 +57,11 @@ class BugList extends Component {
     submitCreateForm = async (event) => {
         event.preventDefault();
         try {
-            const res = axios.post('/api/v1/bugs/?format=json', this.state.newBug).then(() => {
-                this.fetchBugs();
-            })
+            const res = await axios.post('/api/v1/bugs/?format=json', this.state.newBug)
             this.setState({
                 bugs: res.data,
                 showCreateForm: false,
+                redirect: true,
             });
         }
         catch (err) {
@@ -72,6 +73,9 @@ class BugList extends Component {
     render() {
         if (this.state.error){
             return <div>{this.state.error}</div>
+        }
+        if (this.state.redirect) {
+            return <Redirect to="/bugs"/>;
         }
         return (
             <div className="bugs">

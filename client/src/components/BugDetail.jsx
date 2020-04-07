@@ -51,13 +51,8 @@ class BugDetail extends Component {
         event.preventDefault();
         try {
             const bugId = this.props.match.params.id;
-            const res = axios.put(`/api/v1/bugs/${bugId}/?format=json`, this.state.editBug).then(() => {
-                this.fetchFish();
-            })
-            this.setState({
-                bug: res.data,
-                showEditForm: false,
-            });
+            const res = axios.put(`/api/v1/bugs/${bugId}/?format=json`, this.state.editBug)
+            this.setState({bug: res.data, showEditForm: false});
         }
         catch (error) {
             console.log(error)
@@ -68,12 +63,8 @@ class BugDetail extends Component {
     clickDelete = async () => {
         try {
             const bugId = this.props.match.params.id;
-            const res = axios.delete(`/api/v1/bugs/${bugId}/?format=json`).then(() => {
-                this.setState({
-                    bug: res.data,
-                    redirect: true,
-                })
-            })
+            const res = axios.delete(`/api/v1/bugs/${bugId}/?format=json`)
+            this.setState({bug: res.data, redirect: true})
         }
         catch (error) {
             console.log(error)

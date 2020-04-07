@@ -46,9 +46,7 @@ class FishDetail extends Component {
         event.preventDefault();
         try {
             const fishId = this.props.match.params.id;
-            const res = axios.put(`/api/v1/fish/${fishId}/?format=json`, this.state.editFish).then(() => {
-                this.fetchFish();
-            })
+            const res = axios.put(`/api/v1/fish/${fishId}/?format=json`, this.state.editFish)
             this.setState({fish: res.data, showEditForm: false});
         }
         catch (error) {

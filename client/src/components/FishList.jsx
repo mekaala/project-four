@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -21,7 +23,8 @@ class FishList extends Component {
             shadow_size: '',
             sell_price: '',
             photo_url: ''
-        }
+        },
+        redirect: false,
     }
 
     componentDidMount(){
@@ -53,14 +56,13 @@ class FishList extends Component {
         });
     }
     submitCreateForm = async (event) => {
+        event.preventDefault();
         try {
-            event.preventDefault();
-            const res = await axios.post('/api/v1/fish/?format=json', this.state.newFish).then(() => {
-                this.fetchFishes();
-            })
+            const res = await axios.post('/api/v1/fish/?format=json', this.state.newFish)
             this.setState({
                 fishes: res.data,
                 showCreateForm: false,
+                redirect: true,
             });
         }
         catch (err) {
@@ -70,8 +72,11 @@ class FishList extends Component {
     }
 
     render() {
-        if (this.state.error){
+        if (this.state.error) {
             return <div>{this.state.error}</div>
+        }
+        if (this.state.redirect) {
+            return <Redirect to="/fossils"/>;
         }
         return (
             <div className="fish">

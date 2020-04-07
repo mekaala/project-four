@@ -52,9 +52,7 @@ class FossilDetail extends Component {
         event.preventDefault();
         try {
             const fossilId = this.props.match.params.id;
-            const res = axios.put(`/api/v1/fossils/${fossilId}/?format=json`, this.state.editFossil).then(() => {
-                this.fetchFossil();
-            })
+            const res = axios.put(`/api/v1/fossils/${fossilId}/?format=json`, this.state.editFossil)
             this.setState({
                 fossil: res.data,
                 showEditForm: false,
@@ -69,11 +67,10 @@ class FossilDetail extends Component {
     clickDelete = async () => {
         try {
             const fossilId = this.props.match.params.id;
-            const res = axios.delete(`/api/v1/fossils/${fossilId}/?format=json`).then(() => {
-                this.setState({
-                    fossil: res.data,
-                    redirect: true,
-                })
+            const res = axios.delete(`/api/v1/fossils/${fossilId}/?format=json`)
+            this.setState({
+                fossil: res.data,
+                redirect: true,
             })
         }
         catch (error) {
