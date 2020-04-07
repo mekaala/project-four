@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+
 
 class BugDetail extends Component {
 
     state = {
         bug: {},
+        editBug: {},
+        showEditForm: false,
+        redirect: false
     }
 
     componentDidMount() {
@@ -23,8 +28,44 @@ class BugDetail extends Component {
             this.setState({error: error.message})
         }
     }
+    toggleEditForm = () => {
+        const newShowEditForm = !this.state.showEditForm;
+        this.setState({
+            showEditForm: newShowEditForm,
+        });
+      };
+    
+    changeInput = (event) => {
+        const updatedBug = { ...this.state.editBug };
+        updatedBug[event.target.name] = event.target.value;
+        this.setState({
+            editBug: updatedBug,
+        });
+    }
+    submitUpdateForm = (event) => {
+        event.preventDefault();
+        const bugId = this.props.match.params.id;
+        axios.put('/api/v1/bugs/' + bugId, this.state.editBug).then(() => {
+            this.fetchFish();
+        })
+        this.setState({
+            showEditForm: false,
+        });
+    }
+
+    clickDelete = () => {
+        const bugId = this.props.match.params.id;
+        axios.delete('/api/v1/bugs/' + bugId).then(() => {
+            this.setState({
+                redirect: true,
+            })
+        })
+    }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/bugs"/>;
+        }
         return (
             <div className="single-creature">
                 <h1>{ this.state.bug.name }</h1>
@@ -57,6 +98,29 @@ class BugDetail extends Component {
                         <img src={ this.state.bug.photo_url } alt={ this.state.bug.name }/>
                     </div>
                 </div>
+                <div className="edit-form">
+                        <div><button onClick={ this.toggleEditForm }>
+                            { this.state.showEditForm
+                                ? 'Cancel'
+                                : 'Update Bug'
+                            }
+                        </button></div>
+                        { this.state.showEditForm
+                            ? <form onSubmit={ this.submitUpdateForm }>
+                                    <label>Name: </label><input type="text" name="name" onChange={ this.changeInput } value={ this.state.editBug.name }/><br/>
+                                    <label>Northern Availablility: </label><input type="text" name="spawn_month_north" onChange={ this.changeInput } value={ this.state.editBug.spawn_month_north }/><br/>
+                                    <label>Southern Availablility: </label><input type="text" name="spawn_month_south" onChange={ this.changeInput } value={ this.state.editBug.spawn_month_south }/><br/>
+                                    <label>Time Active: </label><input type="text" name="spawn_time" onChange={ this.changeInput } value={ this.state.editBug.spawn_time }/><br/>
+                                    <label>Location: </label><input type="text" name="location" onChange={ this.changeInput } value={ this.state.editBug.location }/><br/>
+                                    <label>Movement: </label><input type="text" name="movement" onChange={ this.changeInput } value={ this.state.editBug.movement }/><br/>
+                                    <label>Sell Price: </label><input type="text" name="sell_price" onChange={ this.changeInput } value={ this.state.editBug.sell_price }/><br/>
+                                    <label>Image: </label><input type="text" name="photo_url" onChange={ this.changeInput } value={ this.state.editBug.photo_url }/><br/>
+                                <input className="submit" type="submit" value="Update Bug"/>
+                            </form>
+                            : null
+                        }
+                        <button onClick={ this.clickDelete }>Delete Bug</button>
+                    </div>
             </div>
         );
     }

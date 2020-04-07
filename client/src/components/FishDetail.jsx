@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class FishDetail extends Component {
 
     state = {
         fish: {},
+        editFish: {},
+        showEditForm: false,
+        redirect: false
     }
 
     componentDidMount() {
@@ -24,7 +28,44 @@ class FishDetail extends Component {
         }
     }
 
+    toggleEditForm = () => {
+        const newShowEditForm = !this.state.showEditForm;
+        this.setState({
+            showEditForm: newShowEditForm,
+        });
+      };
+    
+    changeInput = (event) => {
+        const updatedFish = { ...this.state.editFish };
+        updatedFish[event.target.name] = event.target.value;
+        this.setState({
+            editFish: updatedFish,
+        });
+    }
+    submitUpdateForm = (event) => {
+        event.preventDefault();
+        const fishId = this.props.match.params.id;
+        axios.put('/api/v1/fish' + fishId, this.state.editFish).then(() => {
+            this.fetchFish();
+        })
+        this.setState({
+            showEditForm: false,
+        });
+    }
+
+    clickDelete = () => {
+        const fishId = this.props.match.params.id;
+        axios.delete('/api/v1/fish/' + fishId).then(() => {
+            this.setState({
+                redirect: true,
+            })
+        })
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/fish"/>;
+        }
         return (
             <div className="single-creature">
                 <h1>{ this.state.fish.name }</h1>
@@ -56,6 +97,29 @@ class FishDetail extends Component {
                         <img src={ this.state.fish.photo_url } alt={ this.state.fish.name }/>
                     </div>
                 </div>
+                <div className="edit-form">
+                        <div><button onClick={ this.toggleEditForm }>
+                            { this.state.showEditForm
+                                ? 'Cancel'
+                                : 'Update Fish'
+                            }
+                        </button></div>
+                        { this.state.showEditForm
+                            ? <form onSubmit={ this.submitUpdateForm }>
+                                    <label>Name: </label><input type="text" name="name" onChange={ this.changeInput } value={ this.state.editFish.name }/><br/>
+                                    <label>Northern Availablility: </label><input type="text" name="spawn_month_north" onChange={ this.changeInput } value={ this.state.editFish.spawn_month_north }/><br/>
+                                    <label>Southern Availablility: </label><input type="text" name="spawn_month_south" onChange={ this.changeInput } value={ this.state.editFish.spawn_month_south }/><br/>
+                                    <label>Time Active: </label><input type="text" name="spawn_time" onChange={ this.changeInput } value={ this.state.editFish.spawn_time }/><br/>
+                                    <label>Location: </label><input type="text" name="location" onChange={ this.changeInput } value={ this.state.editFish.location }/><br/>
+                                    <label>Shadow Size: </label><input type="text" name="shadow_size" onChange={ this.changeInput } value={ this.state.editFish.shadow_size }/><br/>
+                                    <label>Sell Price: </label><input type="number" name="sell_price" onChange={ this.changeInput } value={ this.state.editFish.sell_price }/><br/>
+                                    <label>Image: </label><input type="text" name="photo_url" onChange={ this.changeInput } value={ this.state.editFish.photo_url }/><br/>
+                                <input className="submit" type="submit" value="Update Fish"/>
+                            </form>
+                            : null
+                        }
+                        <button onClick={ this.clickDelete }>Delete Fish</button>
+                    </div>
             </div>
         );
     }
