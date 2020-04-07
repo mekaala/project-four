@@ -38,7 +38,7 @@ class FossilDetail extends Component {
     submitUpdateForm = (event) => {
         event.preventDefault();
         const fossilId = this.props.match.params.id;
-        axios.put('/api/v1/fossils' + fossilId, this.state.editFossil).then(() => {
+        axios.put(`/api/v1/fossils/${fossilId}/?format=json`, this.state.editFossil).then(() => {
             this.fetchFossil();
         })
         this.setState({
@@ -48,7 +48,7 @@ class FossilDetail extends Component {
 
     clickDelete = () => {
         const fossilId = this.props.match.params.id;
-        axios.delete('/api/v1/fossils' + fossilId).then(() => {
+        axios.delete(`/api/v1/fossils/${fossilId}/?format=json`).then(() => {
             this.setState({
                 redirect: true,
             })

@@ -45,7 +45,7 @@ class BugDetail extends Component {
     submitUpdateForm = (event) => {
         event.preventDefault();
         const bugId = this.props.match.params.id;
-        axios.put('/api/v1/bugs/' + bugId, this.state.editBug).then(() => {
+        axios.put(`/api/v1/bugs/${bugId}/?format=json`, this.state.editBug).then(() => {
             this.fetchFish();
         })
         this.setState({
@@ -55,7 +55,7 @@ class BugDetail extends Component {
 
     clickDelete = () => {
         const bugId = this.props.match.params.id;
-        axios.delete('/api/v1/bugs/' + bugId).then(() => {
+        axios.delete(`/api/v1/bugs/${bugId}/?format=json`).then(() => {
             this.setState({
                 redirect: true,
             })

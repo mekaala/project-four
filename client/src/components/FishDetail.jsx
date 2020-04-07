@@ -45,7 +45,7 @@ class FishDetail extends Component {
     submitUpdateForm = (event) => {
         event.preventDefault();
         const fishId = this.props.match.params.id;
-        axios.put('/api/v1/fish' + fishId, this.state.editFish).then(() => {
+        axios.put(`/api/v1/fish/${fishId}/?format=json`, this.state.editFish).then(() => {
             this.fetchFish();
         })
         this.setState({
@@ -55,7 +55,7 @@ class FishDetail extends Component {
 
     clickDelete = () => {
         const fishId = this.props.match.params.id;
-        axios.delete('/api/v1/fish/' + fishId).then(() => {
+        axios.delete(`/api/v1/fish/${fishId}/?format=json`).then(() => {
             this.setState({
                 redirect: true,
             })
