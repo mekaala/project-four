@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
 
 class FossilDetail extends Component {
 
@@ -23,11 +27,20 @@ class FossilDetail extends Component {
             this.setState({
                 fossil: fossilResponse.data,
             })
-        } catch (error) {
+        }
+         catch (error) {
             console.log(error)
             this.setState({error: error.message})
         }
     }
+
+    toggleEditForm = () => {
+        const newShowEditForm = !this.state.showEditForm;
+        this.setState({
+            showEditForm: newShowEditForm,
+        });
+      };
+      
     changeInput = (event) => {
         const updatedFossil = { ...this.state.editFossil };
         updatedFossil[event.target.name] = event.target.value;
@@ -35,24 +48,38 @@ class FossilDetail extends Component {
             editFossil: updatedFossil,
         });
     }
-    submitUpdateForm = (event) => {
+    submitUpdateForm = async (event) => {
         event.preventDefault();
-        const fossilId = this.props.match.params.id;
-        axios.put(`/api/v1/fossils/${fossilId}/?format=json`, this.state.editFossil).then(() => {
-            this.fetchFossil();
-        })
-        this.setState({
-            showEditForm: false,
-        });
+        try {
+            const fossilId = this.props.match.params.id;
+            const res = axios.put(`/api/v1/fossils/${fossilId}/?format=json`, this.state.editFossil).then(() => {
+                this.fetchFossil();
+            })
+            this.setState({
+                fossil: res.data,
+                showEditForm: false,
+            });
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
-    clickDelete = () => {
-        const fossilId = this.props.match.params.id;
-        axios.delete(`/api/v1/fossils/${fossilId}/?format=json`).then(() => {
-            this.setState({
-                redirect: true,
+    clickDelete = async () => {
+        try {
+            const fossilId = this.props.match.params.id;
+            const res = axios.delete(`/api/v1/fossils/${fossilId}/?format=json`).then(() => {
+                this.setState({
+                    fossil: res.data,
+                    redirect: true,
+                })
             })
-        })
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
     hideSecond() {

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
 class FishList extends Component {
     state = {
         showCreateForm: false,
@@ -48,14 +52,21 @@ class FishList extends Component {
             newFish: updatedNewFish,
         });
     }
-    submitCreateForm = (event) => {
-        event.preventDefault();
-        axios.post('/api/v1/fish/', this.state.newFish).then(() => {
-            this.fetchFishes();
-        })
-        this.setState({
-            showCreateForm: false,
-        });
+    submitCreateForm = async (event) => {
+        try {
+            event.preventDefault();
+            const res = await axios.post('/api/v1/fish/?format=json', this.state.newFish).then(() => {
+                this.fetchFishes();
+            })
+            this.setState({
+                fishes: res.data,
+                showCreateForm: false,
+            });
+        }
+        catch (err) {
+            console.log(err)
+            this.setState({error: err.message})
+        }
     }
 
     render() {

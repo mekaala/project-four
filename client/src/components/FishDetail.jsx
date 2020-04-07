@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 class FishDetail extends Component {
 
     state = {
@@ -19,10 +22,9 @@ class FishDetail extends Component {
     fetchFish = async (fishId) => {
         try {
             const fishResponse = await axios.get(`/api/v1/fish/${fishId}/?format=json`)
-            this.setState({
-                fish: fishResponse.data,
-            })
-        } catch (error) {
+            this.setState({fish: fishResponse.data})
+        }
+        catch (error) {
             console.log(error)
             this.setState({error: error.message})
         }
@@ -38,28 +40,33 @@ class FishDetail extends Component {
     changeInput = (event) => {
         const updatedFish = { ...this.state.editFish };
         updatedFish[event.target.name] = event.target.value;
-        this.setState({
-            editFish: updatedFish,
-        });
+        this.setState({editFish: updatedFish});
     }
-    submitUpdateForm = (event) => {
+    submitUpdateForm = async (event) => {
         event.preventDefault();
-        const fishId = this.props.match.params.id;
-        axios.put(`/api/v1/fish/${fishId}/?format=json`, this.state.editFish).then(() => {
-            this.fetchFish();
-        })
-        this.setState({
-            showEditForm: false,
-        });
+        try {
+            const fishId = this.props.match.params.id;
+            const res = axios.put(`/api/v1/fish/${fishId}/?format=json`, this.state.editFish).then(() => {
+                this.fetchFish();
+            })
+            this.setState({fish: res.data, showEditForm: false});
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
-    clickDelete = () => {
-        const fishId = this.props.match.params.id;
-        axios.delete(`/api/v1/fish/${fishId}/?format=json`).then(() => {
-            this.setState({
-                redirect: true,
-            })
-        })
+    clickDelete = async () => {
+        try {
+            const fishId = this.props.match.params.id;
+            const res = axios.delete(`/api/v1/fish/${fishId}/?format=json`)
+            this.setState({fish: res.data, redirect: true})
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
     render() {

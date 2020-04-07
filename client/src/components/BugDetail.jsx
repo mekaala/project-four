@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
 
 class BugDetail extends Component {
 
@@ -23,7 +27,8 @@ class BugDetail extends Component {
             this.setState({
                 bug: bugResponse.data,
             })
-        } catch (error) {
+        }
+        catch (error) {
             console.log(error)
             this.setState({error: error.message})
         }
@@ -42,24 +47,38 @@ class BugDetail extends Component {
             editBug: updatedBug,
         });
     }
-    submitUpdateForm = (event) => {
+    submitUpdateForm = async (event) => {
         event.preventDefault();
-        const bugId = this.props.match.params.id;
-        axios.put(`/api/v1/bugs/${bugId}/?format=json`, this.state.editBug).then(() => {
-            this.fetchFish();
-        })
-        this.setState({
-            showEditForm: false,
-        });
+        try {
+            const bugId = this.props.match.params.id;
+            const res = axios.put(`/api/v1/bugs/${bugId}/?format=json`, this.state.editBug).then(() => {
+                this.fetchFish();
+            })
+            this.setState({
+                bug: res.data,
+                showEditForm: false,
+            });
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
-    clickDelete = () => {
-        const bugId = this.props.match.params.id;
-        axios.delete(`/api/v1/bugs/${bugId}/?format=json`).then(() => {
-            this.setState({
-                redirect: true,
+    clickDelete = async () => {
+        try {
+            const bugId = this.props.match.params.id;
+            const res = axios.delete(`/api/v1/bugs/${bugId}/?format=json`).then(() => {
+                this.setState({
+                    bug: res.data,
+                    redirect: true,
+                })
             })
-        })
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({error: error.message})
+        }
     }
 
     render() {

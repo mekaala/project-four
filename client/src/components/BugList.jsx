@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
 class BugList extends Component {
     state = {
         showCreateForm: false,
@@ -48,14 +52,21 @@ class BugList extends Component {
             newBug: updatedNewBug,
         });
     }
-    submitCreateForm = (event) => {
+    submitCreateForm = async (event) => {
         event.preventDefault();
-        axios.post('/api/v1/bugs', this.state.newBug).then(() => {
-            this.fetchBugs();
-        })
-        this.setState({
-            showCreateForm: false,
-        });
+        try {
+            const res = axios.post('/api/v1/bugs/?format=json', this.state.newBug).then(() => {
+                this.fetchBugs();
+            })
+            this.setState({
+                bugs: res.data,
+                showCreateForm: false,
+            });
+        }
+        catch (err) {
+            console.log(err)
+            this.setState({error: err.message})
+        }
     }
 
     render() {

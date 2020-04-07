@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
 class FossilList extends Component {
     state = {
         showCreateForm: false,
@@ -45,14 +49,21 @@ class FossilList extends Component {
             newFossil: updatedNewFossil,
         });
     }
-    submitCreateForm = (event) => {
+    submitCreateForm = async (event) => {
         event.preventDefault();
-        axios.post('/api/v1/fossils', this.state.newFossil).then(() => {
-            this.fetchFossils();
-        })
-        this.setState({
-            showCreateForm: false,
-        });
+        try {
+            const res = axios.post('/api/v1/fossils/?format=json', this.state.newFossil).then(() => {
+                this.fetchFossils();
+            })
+            this.setState({
+                fossils: res.data,
+                showCreateForm: false,
+            });
+        }
+        catch (err) {
+            console.log(err)
+            this.setState({error: err.message})
+        }
     }
 
     render() {
