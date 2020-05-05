@@ -76,7 +76,7 @@ class FishList extends Component {
             return <div>{this.state.error}</div>
         }
         if (this.state.redirect) {
-            return <Redirect to="/fish"/>;
+            return <Redirect to={`/fish/`}/>;
         }
         return (
             <div className="fish">

@@ -24,7 +24,7 @@ class BugList extends Component {
             sell_price: '',
             photo_url: ''
         },
-        redirect: false
+        redirect: false,
     }
 
     componentDidMount(){
@@ -72,7 +72,7 @@ class BugList extends Component {
     }
 
     render() {
-        if (this.state.error){
+        if (this.state.error) {
             return <div>{this.state.error}</div>
         }
         if (this.state.redirect) {
@@ -102,10 +102,10 @@ class BugList extends Component {
                                     <label>Southern Availablility: </label><input type="text" name="spawn_month_south" onChange={ this.changeInput } placeholder="Southern Hemisphere Availability"/><br/>
                                     <label>Time Active: </label><input type="text" name="spawn_time" onChange={ this.changeInput } placeholder="Time Availability"/><br/>
                                     <label>Location: </label><input type="text" name="location" onChange={ this.changeInput } placeholder="Location"/><br/>
-                                    <label>Movement: </label><input type="text" name="shadow_size" onChange={ this.changeInput } placeholder="Shadow Size"/><br/>
+                                    <label>Movement: </label><input type="text" name="movement" onChange={ this.changeInput } placeholder="Movement"/><br/>
                                     <label>Sell Price: </label><input type="text" name="sell_price" onChange={ this.changeInput } placeholder="Sell Price"/><br/>
                                     <label>Image: </label><input type="text" name="photo_url" onChange={ this.changeInput } placeholder="Bug Image"/><br/>
-                                    <input className="submit" type="submit" value="Create New Fish"/>
+                                    <input className="submit" type="submit" value="Create New Bug"/>
                                 </form>
                                 : null
                             }
