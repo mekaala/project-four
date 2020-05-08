@@ -154,14 +154,14 @@ class FossilDetail extends Component {
                         <img src={ this.state.fossil.photo_url } alt={ this.state.fossil.name }/>
                     </div>
                 </div>
-                <div className="edit-form">
+                {/* <div className="edit-form">
                         <div><button onClick={ this.toggleEditForm }>
                             { this.state.showEditForm
                                 ? 'Cancel'
                                 : 'Update Fossil'
                             }
-                        </button></div>
-                        { this.state.showEditForm
+                        </button></div> */}
+                        {/* { this.state.showEditForm
                             ? <form onSubmit={ this.submitUpdateForm }>
                                     <label>Name: </label><input type="text" name="name" onChange={ this.changeInput } value={ this.state.editFossil.name }/><br/>
                                     <label>First Piece: </label><input type="text" name="piece_one" onChange={ this.changeInput } value={ this.state.editFossil.piece_one }/><br/>
@@ -179,8 +179,8 @@ class FossilDetail extends Component {
                             </form>
                             : null
                         }
-                        <button onClick={ this.clickDelete }>Delete Fossil</button>
-                    </div>
+                        <button onClick={ this.clickDelete }>Delete Fossil</button> */}
+                    {/* </div> */}
             </div>
         );
     }

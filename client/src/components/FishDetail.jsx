@@ -102,7 +102,7 @@ class FishDetail extends Component {
                         <img src={ this.state.fish.photo_url } alt={ this.state.fish.name }/>
                     </div>
                 </div>
-                <div className="edit-form">
+                {/* <div className="edit-form">
                         <div><button onClick={ this.toggleEditForm }>
                             { this.state.showEditForm
                                 ? 'Cancel'
@@ -123,8 +123,8 @@ class FishDetail extends Component {
                             </form>
                             : null
                         }
-                        <button onClick={ this.clickDelete }>Delete Fish</button>
-                    </div>
+                    <button onClick={ this.clickDelete }>Delete Fish</button>
+                </div> */}
             </div>
         );
     }

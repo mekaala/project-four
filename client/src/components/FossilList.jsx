@@ -85,7 +85,7 @@ class FossilList extends Component {
                             <Link to={`/fossils/${ fossil.id }`} >{ fossil.name }</Link>
                         </div>
                     ))}
-                    <div className="index-form">
+                    {/* <div className="index-form">
                         <div><button onClick={ this.toggleCreateForm }>
                                 { this.state.showCreateForm
                                     ? 'Cancel'
@@ -110,7 +110,7 @@ class FossilList extends Component {
                                 </form>
                                 : null
                             }
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

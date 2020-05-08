@@ -108,7 +108,7 @@ class BugDetail extends Component {
                         <img src={ this.state.bug.photo_url } alt={ this.state.bug.name }/>
                     </div>
                 </div>
-                <div className="edit-form">
+                {/* <div className="edit-form">
                         <div><button onClick={ this.toggleEditForm }>
                             { this.state.showEditForm
                                 ? 'Cancel'
@@ -129,8 +129,8 @@ class BugDetail extends Component {
                             </form>
                             : null
                         }
-                        <button onClick={ this.clickDelete }>Delete Bug</button>
-                    </div>
+                    <button onClick={ this.clickDelete }>Delete Bug</button>
+                </div> */}
             </div>
         );
     }
